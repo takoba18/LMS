@@ -1,12 +1,13 @@
 package com.azry.LMS.service;
 
+import com.azry.LMS.entity.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 public interface JwtService {
-    String extractUserName(String token);
+    String extractUserId(String token);
 
-    String generateToken(UserDetails userDetails);
+    String generateToken(User userDetails);
 
-    boolean isTokenValid(String token, UserDetails userDetails);
+    boolean isTokenValid(String token, User userDetails);
 }

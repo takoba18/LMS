@@ -6,6 +6,7 @@ import com.azry.LMS.model.response.AddBookResponse;
 import com.azry.LMS.model.response.EditBookResponse;
 import com.azry.LMS.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -16,17 +17,17 @@ public class AdminController {
     private AdminService adminService;
 
     @PostMapping("/book")
-    public AddBookResponse addNewBook(@RequestBody AddBookRequest req) {
-        return adminService.addBook(req);
+    public  ResponseEntity<AddBookResponse> addNewBook(@RequestBody AddBookRequest req) {
+        return ResponseEntity.ok(adminService.addBook(req));
     }
 
     @PatchMapping("/book")
-    public EditBookResponse editBook(@RequestBody EditBookRequest req) {
-        return adminService.editBook(req);
+    public ResponseEntity<EditBookResponse> editBook(@RequestBody EditBookRequest req) {
+        return ResponseEntity.ok(adminService.editBook(req));
     }
 
-    @DeleteMapping("/book")
-    public void removeBook(int id) {
+    @DeleteMapping("/book/{id}")
+    public void removeBook(@PathVariable Long id) {
         adminService.removeBook(id);
     }
 

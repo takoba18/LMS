@@ -9,5 +9,5 @@ import lombok.*;
 public class AddBookRequest {
         private String author;
         private String title;
-        private String ISBN;
+        private String isbn;
 }

@@ -9,6 +9,6 @@ import org.springframework.stereotype.Service;
 @Service
 public interface AdminService {
      EditBookResponse editBook(EditBookRequest req);
-     void removeBook(int id);
+     void removeBook(Long id);
      AddBookResponse addBook(AddBookRequest req);
 }

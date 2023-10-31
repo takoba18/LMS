@@ -10,10 +10,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class AddBookResponse extends AddBookRequest {
-    private int id;
+    private Long id;
 
     public AddBookResponse(Book book) {
-        super(book.getAuthor(),book.getTitle(),book.getISBN());
+        super(book.getAuthor(),book.getTitle(),book.getIsbn());
         id = book.getId();
     }
 }
